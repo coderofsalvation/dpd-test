@@ -62,6 +62,30 @@ test/mytest.js:
       }  
     })
 
-## Authenticated endpoints
+## Authenticated test
 
+Just specify a user, and the user is automatically created and authenticated:
+
+		dpdTest.run({
+			port: port, 
+			patchFile: patchFiles, 
+			user: {username:"foo", "password":"foo"}, 
+			ready: function(dpd, done, sessionid ){
+
+				request
+					.get('localhost:'+port+'/user/me')
+					.set('Cookie', 'sid='+sessionid)
+					.set('Content-Type',  'application/json')
+					.set('Accept',  'application/json')
+					.end(function(err,  res){
+						console.dir(res.body) // logged in
+						done()
+					})
+
+			}, 
+			done: function(err, database){
+				console.log("done") 
+				process.exit( err ? 1 : 0 )
+			} 
+		})
 
