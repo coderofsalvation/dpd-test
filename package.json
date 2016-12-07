@@ -1,0 +1,23 @@
+{
+  "name": "dpd-test",
+  "version": "1.0.0",
+  "description": "description here",
+  "main": "index.js",
+  "directories": {
+    "test": "set -ex; for test in test/tests/*; do $test; done"
+  },
+  "scripts": {
+    "test": "set -ex; for test in test/tests/*; do $test; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderofsalvation/dpd-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coderofsalvation/dpd-test/issues"
+  },
+  "homepage": "https://github.com/coderofsalvation/dpd-test#readme"
+}
