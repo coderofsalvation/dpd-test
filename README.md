@@ -1,8 +1,8 @@
-Easy way to write deployd tests
+Easy way to write deployd tests without mongodb 
+
+<img src="https://media4.giphy.com/media/i9qfoiyZ4Ml0c/200_s.gif" width="150" style="width:150px"/>
 
 ![Build Status](https://travis-ci.org/--repourl=git@github.com:coderofsalvation/dpd-test..svg?branch=master)
-
-> warning: BETA
 
 ## Usage
 
@@ -89,3 +89,22 @@ Just specify a user, and the user is automatically created and authenticated:
 			} 
 		})
 
+> for testing roles check [dpd-acl-roles-permissions](https://npmjs.org/package/dpd-acl-roles-permissions)
+
+## Patch files
+
+Occasionally it can be handy to patch required files to mimic certain situations:
+
+		var patchFiles = function(file){
+			if( file.match(/resources\/foo\/config.json/) != null ){
+				var mod = JSON.parse(require('fs').readFileSync(file))
+				delete mod.user.properties
+				return mod
+			}
+		}
+
+		dpdTest.run({
+			...
+			patchFile: patchFiles
+			...
+		})

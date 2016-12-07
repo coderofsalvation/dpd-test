@@ -1,6 +1,6 @@
 {
   "name": "dpd-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "easy peasy way to write deployd tests",
   "main": "index.js",
   "directories": {
