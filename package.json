@@ -1,13 +1,13 @@
 {
   "name": "dpd-test",
   "version": "1.0.0",
-  "description": "description here",
+  "description": "easy peasy way to write deployd tests",
   "main": "index.js",
   "directories": {
     "test": "set -ex; for test in test/tests/*; do $test; done"
   },
   "scripts": {
-    "test": "set -ex; for test in test/tests/*; do $test; done"
+    "test": "set -ex; for test in test/test/*; do $test; done"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/coderofsalvation/dpd-test/issues"
   },
-  "homepage": "https://github.com/coderofsalvation/dpd-test#readme"
+  "homepage": "https://github.com/coderofsalvation/dpd-test#readme",
+  "dependencies": {
+    "dpd-filebased-mongodb": "^1.2.1",
+    "superagent": "^3.1.0"
+  }
 }
