@@ -7,6 +7,7 @@ Easy way to write deployd tests without mongodb
 ## Usage
 
     $ npm install dpd-test --save
+    $ NODE_PATH=node_modules node test/mytest.js
 
 test/mytest.js:
 
