@@ -21,12 +21,12 @@ test/mytest.js:
         done()
       }, 
       done: function(err, database){
-        console.log("done")                // inspect database content here 
+        console.log("done")                // inspect database content here  (or in file 'mongodb.test.js')
         process.exit( err ? 1 : 0 )
       }  
     })
 
-> Voila,  there you go
+> Voila,  there you go 
 
 ## Options 
 
@@ -34,9 +34,10 @@ test/mytest.js:
 |-----------|--------------------|----------------------------------------------------------------------------------------------------|
 | ready     | fn(dpd, done)      | called when deployd server started.                                                                |
 | done      | fn (err, database) | called when done() is called in ready(). You can inspect the contents of the database afterwards   |
-| port      | integer            | port for the fake deployd server to listen on                                                      |
-| isRoot    | boolean            | this sets `req.isRoot = true` on each request when `dpd-ssh-key`-header is sent (see auth example) |
+| port      | integer (3030)     | port for the fake deployd server to listen on                                                      |
+| isRoot    | boolean (false)    | this sets `req.isRoot = true` on each request when `dpd-ssh-key`-header is sent (see auth example) |
 | patchFile | fn(file)           | allows patching files during bootup                                                                |
+| noreset   | boolean (false)    | don't wipe database during startup (reuse db of previous test)                                     |
 
 ## Endpoint testing 
 
